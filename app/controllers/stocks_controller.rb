@@ -4,20 +4,24 @@ class StocksController < ApplicationController
   def search
     @stock = Stock.new_lookup(params[:stock].upcase)
     if @stock.nil?
-      flash[:alert] = "Please enter a valid Stock symbol to search"
-      redirect_to my_portfolio_path
+      respond_to do |format|
+        flash.now[:alert] = "Please enter a valid Stock symbol to search"
+        format.js {render partial: 'users/result'}
+      end
     else
       respond_to do |format|
         format.js {render partial: 'users/result'}
       end
     end
   end
-
+  
   private
   def check_String
     if params[:stock].empty?
-      flash[:alert] = 'Please Enter a symbol to search!'
-      redirect_to my_portfolio_path
+      respond_to do |format|
+        flash.now[:alert] = 'Please Enter a symbol to search!'
+        format.js {render partial: 'users/result'}
+      end
     end
   end
 end
