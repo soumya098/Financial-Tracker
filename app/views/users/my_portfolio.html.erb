@@ -1,0 +1,18 @@
+<h1>My Portfolio</h1>
+
+<div class="search-area">
+  <h5>Search Stocks</h5>
+  <%= form_tag search_stock_path, method: :get do %>
+    <div class="form-group row">
+      <div class="col-sm-9 pr-0">
+        <%= text_field_tag :stock, params[:stock], placeholder: 'Enter Stock ticker symbol',
+                                                   autofocus: true, class: 'form-control'%>
+      </div>
+      <div class="col-sm-3 pl-0">
+        <%= button_tag type: :submit, class: 'btn btn-success' do %>
+          <i class="fas fa-search fa-lg"></i>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
