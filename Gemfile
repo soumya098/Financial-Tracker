@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'iex-ruby-client'
+gem 'ruby_xid', '~> 1.0', '>= 1.0.7'
 
 
 # Use Active Storage variant

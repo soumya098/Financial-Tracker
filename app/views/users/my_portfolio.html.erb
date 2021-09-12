@@ -2,7 +2,7 @@
 
 <div class="search-area">
   <h5>Search Stocks</h5>
-  <%= form_tag search_stock_path, remote: true, method: :get do %>
+  <%= form_tag search_stock_path, id: "form-search-stock", remote: true, method: :get do %>
     <div class="form-group row">
       <div class="col-sm-9 pr-0">
         <%= text_field_tag :stock, params[:stock], placeholder: 'Enter Stock ticker symbol',
