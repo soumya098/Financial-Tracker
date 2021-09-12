@@ -14,7 +14,9 @@
   <body>
     <%= render 'layouts/navigation' %>
     <div class="container">
-      <%= render 'layouts/msgs' %>
+      <div id="alert-box">
+        <%= render 'layouts/msgs' %>
+      </div>
       <%= yield %>
     </div>
   </body>
